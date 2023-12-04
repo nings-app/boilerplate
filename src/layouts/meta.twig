@@ -1,0 +1,17 @@
+<meta charset="utf-8" />
+<title>{{seo.title}}</title>
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="description" content="{{seo.description}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta property="og:title" content="{{seo.title}}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{page.url}}" />
+{% if seo.image %}
+    {% for image in seo.image %}
+        <meta property="og:image" content="{{image}}" />
+    {% endfor %}
+{% endif %}
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="{{'assets/favicon.png'|themeUrl}}" />
+<!-- Template CSS -->
+{% include 'styles.twig' %}

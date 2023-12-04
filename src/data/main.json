@@ -1,0 +1,123 @@
+{
+  "var": {
+    "data": [],
+    "site": {
+      "id": 1,
+      "service_id": 1,
+      "theme_id": 2,
+      "slug": "official",
+      "name": "官方網站",
+      "content": "我是官網",
+      "status": "1",
+      "meta": [],
+      "login": "https://admin.f3cms.com/#/auth/login",
+      "register": "https://admin.f3cms.com/#/auth/register"
+    },
+    "theme": {
+      "id": "2",
+      "path": "/official",
+      "slug": "c0utruvachi9a8rofequch6xlbe6ocr0",
+      "name": "official",
+      "cover": null,
+      "author": "WAYNE",
+      "version": "0.0.1",
+      "status": "1",
+      "is_public": "0",
+      "last_user": "1",
+      "last_ts": "2023-03-27 15:12:11",
+      "insert_user": "1",
+      "insert_ts": "2023-03-27 15:11:59"
+    },
+    "trackingData": [
+      {
+        "measurement_id": "G-99XF6401L8"
+      }
+    ],
+    "menu": {
+      "1": [
+        {
+          "id": 1,
+          "parent_id": null,
+          "type": 1,
+          "name": "Home",
+          "link": "/",
+          "sort": 0,
+          "is_system": 1
+        },
+        {
+          "id": 2,
+          "parent_id": null,
+          "type": 1,
+          "name": "About us",
+          "link": "/about",
+          "sort": 1,
+          "is_system": 0
+        }
+      ],
+      "2": [
+        {
+          "id": 5,
+          "parent_id": null,
+          "type": 1,
+          "name": "About",
+          "link": "/about",
+          "sort": 0,
+          "is_system": 0
+        },
+        {
+          "id": 6,
+          "parent_id": null,
+          "type": 1,
+          "name": "Contact",
+          "link": "/contact",
+          "sort": 0,
+          "is_system": 0
+        },
+        {
+          "id": 4,
+          "parent_id": null,
+          "type": 1,
+          "name": "Terms",
+          "link": "/terms",
+          "sort": 2,
+          "is_system": 0
+        },
+        {
+          "id": 3,
+          "parent_id": null,
+          "type": 1,
+          "name": "Privacy",
+          "link": "/privacy",
+          "sort": 3,
+          "is_system": 0
+        }
+      ]
+    }
+  },
+  "seo": {},
+  "domain": {
+    "main": "https://f3.co",
+    "cdn": "https://cdn.f3cms.com",
+    "backend": "https://backend.f3cms.com",
+    "admin": "https://admin.f3cms.com",
+    "core": "https://core.f3cms.com",
+    "cms": "https://*.f3cms.com",
+    "webkit": "https://webkit.f3cms.com",
+    "member": "https://member.f3cms.com"
+  },
+  "page": {
+    "url": "https://member.f3cms.com/login?d=fa5epriclqlfeyicl81c",
+    "env": "development",
+    "webkit": {
+      "url": "https://cdn.f3cms.com/webkit/0.0.15/development/webkit.js",
+      "version": "0.0.15"
+    },
+    "cache": {
+      "version": "v202309131701"
+    },
+    "meta": [],
+    "recaptcha": null,
+    "privacy": "https://f3.co/privacy",
+    "terms": "https://f3.co/terms"
+  }
+}

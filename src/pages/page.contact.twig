@@ -1,0 +1,117 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-contact-page{% endblock %} {% block content %}
+
+<main>
+    <section class="tc-contact-info pt-50 pb-50">
+        <div class="container">
+            <div class="content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>{{var.data.title}}</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="tc-main-post-style1">
+                            <div class="tc-main-post-content">
+                                <div class="tc-main-post-content">
+                                    {{ var.data.content|editor2Html({ 'paragraph': 'info-text sm-content-width mt-30',
+                                    'header': 'sub-title sm-content-width mt-40', 'list': 'info-text sm-content-width
+                                    mt-20 mb-20', 'image': 'img img-cover sm-content-width mt-15', 'image_caption':
+                                    'text-center color-999 py-3 fst-italic sm-content-width', 'delimiter': 'info-text
+                                    sm-content-width', 'quote': 'quote-message-content sm-content-width mt-50',
+                                    'quote_message': 'quote-message w-100', 'quote_caption': 'color-999 mt-20', }) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr />
+    <section class="tc-contact-form pt-40 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-card">
+                        <h4 class="fsz-24px text-capitalize mb-10">與我們聯繫</h4>
+                        <p class="fsz-13px mb-30"><span class="text-danger">*</span> 表示必填欄位</p>
+                        <form class="form" x-data="contact" x-validate="submit" novalidate>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group mb-15">
+                                        <input
+                                            type="text"
+                                            name="title"
+                                            class="form-control"
+                                            placeholder="主旨 "
+                                            x-model="title"
+                                            data-rules="optional"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mb-15">
+                                        <textarea
+                                            rows="6"
+                                            name="message"
+                                            class="form-control"
+                                            placeholder="在這裡填寫您的訊息 *"
+                                            x-model="content"
+                                            data-rules="required"
+                                            required
+                                        ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-15">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            class="form-control"
+                                            placeholder="姓名 * "
+                                            x-model="name"
+                                            data-rules="required"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-15">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            class="form-control"
+                                            placeholder="你的電子信箱 * "
+                                            x-model="email"
+                                            data-rules="required|email"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-15">
+                                        <input
+                                            type="tel"
+                                            name="tel"
+                                            class="form-control"
+                                            placeholder="聯絡電話"
+                                            x-model="tel"
+                                            data-rules="optional|tel:TW"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="cf-turnstile" data-token="token"></div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn bg-main text-white rounded-0 mt-30">
+                                <span class="fsz-11px">傳送訊息</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

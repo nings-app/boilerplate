@@ -1,0 +1,41 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-single-post-creative-page{% endblock %} {% block content %}
+
+<main>
+    <!-- ====== start tc-main-post-style1 ====== -->
+    <section class="tc-main-post-style1 pb-60">
+        <div class="container">
+            <div class="tc-main-post-title pt-40 pb-40">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1 class="title">{{var.data.title}}</h1>
+                    </div>
+                </div>
+            </div>
+
+            {% if var.data.cover != null %}
+            <div class="tc-main-post-img img-cover mb-50">
+                <img src="{{var.data.cover|site_url('cdn')}}" alt="" />
+            </div>
+            {% endif %}
+            <div class="tc-main-post-content color-000">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h4 class="sub-title sm-content-width mb-40">{{var.data.intro | default('')}}</h4>
+
+                        <div class="tc-main-post-content">
+                            {{ var.data.content|editor2Html({ 'paragraph': 'info-text sm-content-width mt-30', 'header':
+                            'sub-title sm-content-width mt-40', 'list': 'info-text sm-content-width mt-40 mb-40',
+                            'image': 'img img-cover sm-content-width mt-15', 'image_caption': 'text-center color-999
+                            py-3 fst-italic sm-content-width', 'delimiter': 'info-text sm-content-width', 'quote':
+                            'quote-message-content sm-content-width mt-50', 'quote_message': 'quote-message w-100',
+                            'quote_caption': 'color-999 mt-20', }) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== end tc-main-post-style ====== -->
+</main>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-about-page{% endblock %} {% block content %}
+
+<main>
+    <section class="tc-about-header">
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h2>{{var.data.title}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== start about-about ====== -->
+    <section class="tc-about-about">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8">
+                    <div class="info mt-4 mt-lg-0">
+                        {{ var.data.content|editor2Html({ 'paragraph': 'info-text sm-content-width mt-30', 'header':
+                        'sub-title sm-content-width mt-40', 'list': 'info-text sm-content-width mt-40 mb-40', 'image':
+                        'img img-cover sm-content-width mt-15', 'image_caption': 'text-center color-999 py-3 fst-italic
+                        sm-content-width', 'delimiter': 'info-text sm-content-width', 'quote': 'quote-message-content
+                        sm-content-width mt-50', 'quote_message': 'quote-message w-100', 'quote_caption': 'color-999
+                        mt-20', }) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== end about-about ====== -->
+</main>
+
+{% endblock %}

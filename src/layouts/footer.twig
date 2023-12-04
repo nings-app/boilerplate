@@ -1,0 +1,76 @@
+<!-- ====== start footer ====== -->
+<footer class="footer-style1">
+	<div class="container">
+		<div class="tc-subscribe-style1">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-lg-12">
+					<form
+						x-validate="submit"
+						x-data="subscribe"
+						class="sub-form"
+						data-after="window.gtag('event', 'submit', {event_category: 'show-box',event_label: 'input-Wrap-subscribe'});"
+						novalidate
+					>
+						<div class="form-group">
+							<span class="icon">
+								<i class="la la-envelope"></i>
+							</span>
+							<input
+								type="email"
+								name="email"
+								class="form-control track"
+								data-action="tryto"
+								data-cate="show-box"
+								data-label="input-Wrap-subscribe"
+								placeholder="電子信箱"
+								x-model="email"
+								data-rules="required|email"
+							/>
+							<button type="submit">訂閱</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="content pb-3">
+			<div class="footer-style4 text-center">
+				<div class="foot-links">
+					{% for menu in var.menu.2 %} {% if menu.type == 1 %}
+
+					<a href="{{ menu.link }}">{{ menu.name }}</a>
+
+					{% elseif menu.type == 2 %}
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link active dropdown-toggle"
+							href="#"
+							id="navbarDropdown1"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							{{ menu.name }}
+						</a>
+						<ul class="dropdownMenu" aria-labelledby="navbarDropdown1">
+							{% for child in menu.children %}
+							<li><a class="dropdown-item" href="{{ child.link }}">{{ child.name }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+					{% endif %} {% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="foot text-center py-5 pt-0 brd-gray">
+			<p class="fsz-13px color-666">{{var.site.name}}&copy;{{ "now"|date("Y") }}・Powered by GotoPublics</p>
+		</div>
+	</div>
+	<!-- ====== start to top button ====== -->
+	<a href="#" class="to_top">
+		<i class="la la-angle-up"></i>
+	</a>
+	<!-- ====== end to top button ====== -->
+</footer>
+<!-- ====== end footer ====== -->

@@ -1,0 +1,198 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-blog-page{% endblock %} {% block content %}
+
+<main>
+    {% if var.cates %}
+    <!-- ====== start nav search ====== -->
+    <div class="tc-blog-nav-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="info">
+                        <div class="links">
+                            {% for cate in var.cates %}
+                            <a href="/tag/{{ cate.id }}/{{ cate.slug }}">{{ cate.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ====== end nav search ====== -->
+    {% endif %}
+
+    <section class="tc-popular-posts-blog">
+        <div class="container">
+            <div class="content-widgets pb-50">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tc-post-list-style3">
+                            <div class="items">
+                                {% if var.data.presses.rows %} {% for press in var.data.presses.rows | filter(v =>
+                                v.to_top > 0) %}
+
+                                <div class="item mt-30 p-30 bg-gray1 border-bottom-0">
+                                    <div class="row">
+                                        {% if press.cover != null %}
+                                        <div class="col-lg-5">
+                                            <div class="img th-230 img-cover overflow-hidden">
+                                                <img src="{{press.cover|site_url('cdn')}}" alt="" />
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        <div class="{{ press.cover != null ? 'col-lg-7' : 'col-lg-12'}}">
+                                            <div class="content mt-20 mt-lg-0">
+                                                {% if press.cat_name %}
+                                                <a
+                                                    href="{{press.tag_url}}"
+                                                    class="color-999 fsz-13px text-uppercase mb-10"
+                                                >
+                                                    {{press.cat_name}}
+                                                </a>
+                                                {% endif %}
+                                                <h4 class="title mb-15">
+                                                    <a href="/{{press.id}}/{{press.slug}}">{{press.title}}</a>
+                                                </h4>
+                                                <div class="text color-666">{{press.intro | default('')}}</div>
+                                                <div class="meta-bot fsz-13px color-666">
+                                                    <ul class="d-flex">
+                                                        <li class="date me-5">
+                                                            <i class="la la-calendar me-2"></i>
+                                                            {{press.publish_ts|date('M d, Y')}}
+                                                        </li>
+                                                        <li class="author me-5">
+                                                            <i class="la la-user me-2"></i> by {% for author in
+                                                            press.author %}
+
+                                                            <span class="color-000">{{author.name}}</span>
+
+                                                            {% endfor %}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% endfor %} {% for press in var.data.presses.rows | filter(v => v.to_top == 0) %}
+
+                                <div class="item">
+                                    <div class="row">
+                                        {% if press.cover != null %}
+                                        <div class="col-lg-5">
+                                            <div class="img th-230 img-cover overflow-hidden">
+                                                <img src="{{press.cover|site_url('cdn')}}" alt="" />
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        <div class="{{ press.cover != null ? 'col-lg-7' : 'col-lg-12'}}">
+                                            <div class="content mt-20 mt-lg-0">
+                                                {% if press.cat_name %}
+                                                <a
+                                                    href="{{press.tag_url}}"
+                                                    class="color-999 fsz-13px text-uppercase mb-10"
+                                                >
+                                                    {{press.cat_name}}
+                                                </a>
+                                                {% endif %}
+                                                <h4 class="title mb-15">
+                                                    <a href="/{{press.id}}/{{press.slug}}">{{press.title}}</a>
+                                                </h4>
+                                                <div class="text color-666">{{press.intro | default('')}}</div>
+                                                <div class="meta-bot fsz-13px color-666">
+                                                    <ul class="d-flex">
+                                                        <li class="date me-5">
+                                                            <i class="la la-calendar me-2"></i>
+                                                            {{press.publish_ts|date('M d, Y')}}
+                                                        </li>
+                                                        <li class="author me-5">
+                                                            <i class="la la-user me-2"></i> by {% for author in
+                                                            press.author %}
+
+                                                            <span class="color-000">{{author.name}}</span>
+
+                                                            {% endfor %}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% endfor %} {% endif %}
+                            </div>
+                        </div>
+                        <div class="pagination style-1 color-main justify-content-center mt-60">
+                            <a href="#" class="active">
+                                <span>1</span>
+                            </a>
+                            <a href="#">
+                                <span>2</span>
+                            </a>
+                            <a href="#">
+                                <span>3</span>
+                            </a>
+                            <a href="#">
+                                <span>4</span>
+                            </a>
+                            <a href="#">
+                                <span>...</span>
+                            </a>
+                            <a href="#">
+                                <span>20</span>
+                            </a>
+                            <a href="#">
+                                <span class="text text-uppercase">next <i class="la la-angle-right"></i> </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{#
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{'assets/img/home-bg.jpg'|themeUrl}})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>{{var.site.name}}</h1>
+                    <span class="subheading">{{var.site.content}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            {% for press in var.data.presses.rows %}
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="/{{press.id}}/{{press.slug}}">
+                    <h2 class="post-title">{{press.title}}</h2>
+                    <h3 class="post-subtitle">{{press.intro | default('')}}</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by {% for author in press.author %}
+                    <a href="/author/{{author.id}}">{{author.name}}</a>
+                    {% endfor %} on {{press.publish_ts|date('Y-m-d H:i')}}
+                </p>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+            {% endfor %}
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4">
+                <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+            </div>
+        </div>
+    </div>
+</div>
+#} {% endblock %}
