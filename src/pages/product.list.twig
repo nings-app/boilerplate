@@ -1,0 +1,76 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-shop-page{% endblock %} {% block content %}
+<main>
+    <!-- ====== start products content ====== -->
+    <section class="tc-products-content pt-60 pb-60">
+        <div class="container" x-data="productList">
+            <div class="tc-products">
+                <div class="row">
+                    <template x-if="loaded === true">
+                        <template x-for="product in data.rows">
+                            <div class="col-lg-4">
+                                <div class="product-card">
+                                    <div class="img">
+                                        <template x-if="product.cover">
+                                            <img :src="product.cover" alt="" />
+                                        </template>
+                                    </div>
+                                    <div class="info pt-30">
+                                        <a href="page-product.html" class="title" x-text="product.name">
+                                            Cast Iron Animals - Black Bird
+                                        </a>
+                                        <strong class="price" x-text="$formatMoney(product.price)">$36.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+
+                {#
+                <div class="text-center mt-20">
+                    <a href="#" class="btn bg-main text-white rounded-0">
+                        <span class="fsz-11px">Load More (6)</span>
+                    </a>
+                </div>
+                #}
+            </div>
+
+            <template x-if="loaded">
+                <div
+                    class="pagination style-1 color-main justify-content-center mt-60"
+                    x-data="paginate(data, refreshCallback())"
+                >
+                    <template x-if="meta.pos > 0">
+                        <a href="#" @click.prevent="changePos(meta.pos - 1)">
+                            <span class="text text-uppercase">
+                                Previous
+                                <i class="la la-angle-right"></i>
+                            </span>
+                        </a>
+                    </template>
+
+                    <template x-for="i in next()">
+                        <a
+                            href="#"
+                            @click.prevent="changePos(i - 1)"
+                            :class="{'disabled': i - 1 == meta.pos || i === '...', 'active': i - 1 == meta.pos, 'static': i === '...'}"
+                        >
+                            <span x-text="i">1</span>
+                        </a>
+                    </template>
+
+                    <template x-if="meta.pos + 1 != meta.count">
+                        <a href="#" @click.prevent="changePos(meta.pos + 1)">
+                            <span class="text text-uppercase">
+                                Next
+                                <i class="la la-angle-right"></i>
+                            </span>
+                        </a>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </section>
+    <!-- ====== end products content ====== -->
+</main>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends '/layouts/base.twig' %} {% block parent_css %}tc-shop-page{% endblock %} {% block content %}
+<main class="product-page">
+    <!-- ====== start product ====== -->
+    <section class="product pt-50">
+        <div class="container">
+            <div class="content">
+                <div class="row gx-5">
+                    <div class="col-lg-6">
+                        <div class="product-slider">
+                            <div class="img">
+                                <img src="{{var.data.product.cover|site_url('cdn')}}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-info" x-data="product({{var.data.product.id}})">
+                            {#
+                            <h6 class="category">Clocks</h6>
+                            #}
+                            <h5 class="title">{{var.data.product.name}}</h5>
+
+                            <div class="price" x-text="$formatMoney(data.price)">{{var.data.product.price}}</div>
+                            <div class="info-text">{{var.data.product.intro}}</div>
+
+                            <template x-if="loaded">
+                                <div class="color-quantity">
+                                    <div class="select-color">
+                                        <select class="form-select" x-bind="specification" x-model="selected.id">
+                                            <option :selected="data.sku.length !== 1" disabled>請選擇商品規格</option>
+                                            <template x-for="spec in data.sku">
+                                                <option x-bind="option">商品規格</option>
+                                            </template>
+                                        </select>
+                                    </div>
+                                    <div class="qyt-addCart gap-4">
+                                        <div class="add-more">
+                                            <input
+                                                type="button"
+                                                value="-"
+                                                class="button-minus border-0 icon-shape icon-sm mx-1"
+                                                x-bind="decrease"
+                                            />
+                                            <input
+                                                type="number"
+                                                step="1"
+                                                name="quantity"
+                                                class="quantity-field border-0 text-center w-25"
+                                                x-bind="value"
+                                            />
+                                            <input
+                                                type="button"
+                                                value="+"
+                                                class="button-plus border-0 icon-shape icon-sm"
+                                                x-bind="increase"
+                                            />
+                                        </div>
+                                        <a href="#" class="btn rounded-pill" x-bind="add2cart">
+                                            <span>加入購物車</span>
+                                        </a>
+                                        <a href="#" class="btn rounded-pill bg-white border" x-bind="add2cart" data-force="1">
+                                            <span class="text-dark">立即購買</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== end product ====== -->
+
+    <!-- ====== start product details ====== -->
+    <section class="product-details pt-100 mb-100">
+        <div class="container">
+            <div class="content-info text-center pb-0">{{var.data.product.content|editor2Html}}</div>
+        </div>
+    </section>
+    <!-- ====== end product details ====== -->
+</main>
+{% endblock %}

@@ -1,0 +1,215 @@
+{
+  "var": {
+    "data": {
+      "product": {
+        "id": 1,
+        "name": "test product 1",
+        "slug": "test-product-1",
+        "cover": "/image/2023/12/11/db2d503f-1dbe-4d5b-ae79-723a3ad3b2e8.webp",
+        "intro": "test 1",
+        "status": "online",
+        "content": {
+          "time": 1702306881080,
+          "blocks": [
+            {
+              "id": "VfMuU7udKI",
+              "type": "paragraph",
+              "data": {
+                "text": "t"
+              }
+            },
+            {
+              "id": "1DqZ3XYUHe",
+              "type": "paragraph",
+              "data": {
+                "text": "te"
+              }
+            },
+            {
+              "id": "-4H6aiXkZu",
+              "type": "paragraph",
+              "data": {
+                "text": "tes"
+              }
+            },
+            {
+              "id": "3ojIAOYidv",
+              "type": "paragraph",
+              "data": {
+                "text": "test"
+              }
+            },
+            {
+              "id": "spR1Xedfb-",
+              "type": "paragraph",
+              "data": {
+                "text": "test 1"
+              }
+            }
+          ],
+          "version": "2.28.2"
+        }
+      }
+    },
+    "site": {
+      "id": 4,
+      "service_id": 0,
+      "theme_id": 3,
+      "slug": "my-amazing-website",
+      "name": "AI 科技前沿",
+      "content": "AI 科技前沿是一個專注于人工智慧（AI）最新發展的網站。我們提供專業的分析和評論，以帶給讀者最新的 AI 科技信息。我們的團隊由專業的科學家和工程師組成，他們將通過研究報告、新聞評論、專欄文章等形式，向您介紹 AI 的最新進展，并對其未來的發展和應用進行展望。訪問我們的網站，了解 AI 的未來。",
+      "status": "1",
+      "database": "bea784aeadd0a303194e1c",
+      "meta": {
+        "timezone": "Asia/Singapore",
+        "language": "zh-tw",
+        "seo": {
+          "cover": "/image/2023/08/22/ff650bad-7fdc-41b4-8307-71c643ce30f6.webp",
+          "title": "",
+          "description": ""
+        },
+        "logo": ""
+      },
+      "login": "",
+      "register": ""
+    },
+    "theme": {
+      "id": "3",
+      "path": "/default",
+      "slug": "z656na9ruJlxi1iWR8CRa6taRUv0ZaCe",
+      "name": "default_dark",
+      "cover": null,
+      "author": "WAYNE",
+      "version": "0.0.2",
+      "status": "1",
+      "is_public": "1",
+      "last_user": "4",
+      "last_ts": "2023-08-14 10:46:42",
+      "insert_user": "4",
+      "insert_ts": "2023-08-14 10:46:42"
+    },
+    "trackingData": [
+      {
+        "account_id": "1",
+        "property_id": "378951341",
+        "stream_id": "5274684233",
+        "measurement_id": "G-1YD73TLM",
+        "is_external": "0"
+      },
+      {
+        "account_id": "2",
+        "property_id": "external",
+        "stream_id": "external",
+        "measurement_id": "UA-107437897-1",
+        "is_external": "1"
+      }
+    ],
+    "menu": {
+      "1": [
+        {
+          "id": 1,
+          "parent_id": null,
+          "type": 1,
+          "name": "Home",
+          "link": "/",
+          "sort": 0,
+          "is_system": 1
+        },
+        {
+          "id": 2,
+          "parent_id": null,
+          "type": 1,
+          "name": "About Us",
+          "link": "/about",
+          "sort": 1,
+          "is_system": 0
+        },
+        {
+          "id": 3,
+          "parent_id": null,
+          "type": 1,
+          "name": "Contact Us",
+          "link": "/contact",
+          "sort": 2,
+          "is_system": 0
+        },
+        {
+          "id": 6,
+          "parent_id": null,
+          "type": 1,
+          "name": "test",
+          "link": "https://console.cloud.google.com/security/ccm/certificates/details/global/name/g-publics-plural-staging-cert?project=gotopublics-cloud&authuser=2",
+          "sort": 3,
+          "is_system": 0
+        }
+      ],
+      "2": [
+        {
+          "id": 4,
+          "parent_id": null,
+          "type": 1,
+          "name": "Privacy Policy",
+          "link": "/privacy",
+          "sort": 0,
+          "is_system": 0
+        },
+        {
+          "id": 5,
+          "parent_id": null,
+          "type": 1,
+          "name": "Terms of Use",
+          "link": "/terms",
+          "sort": 1,
+          "is_system": 0
+        }
+      ]
+    }
+  },
+  "seo": {},
+  "cloudflare": {
+    "client": "0x4AAAAAAABDvsGUAaIMx_9k",
+    "secret": "0x4AAAAAAABDvk-RCIyvDntbj50buYY4qwY",
+    "zone_id": "e8169cd2b543583dfe9b6c5a3879dba7",
+    "token": "56ec445934f7938b276da5b235b37057d948c",
+    "email": "shuaib25@gmail.com"
+  },
+  "domain": {
+    "main": "https://f3cms.com",
+    "cdn": "https://cdn.f3cms.com",
+    "backend": "https://backend.f3cms.com",
+    "admin": "https://admin.f3cms.com",
+    "core": "https://core.f3cms.com",
+    "cms": "https://*.f3cms.com",
+    "webkit": "https://webkit.f3cms.com",
+    "member": "https://member.f3cms.com",
+    "purchase": "https://purchase.f3cms.com"
+  },
+  "page": {
+    "url": "https://my-amazing-website.f3cms.com/product/1/test-product-1",
+    "env": "development",
+    "webkit": {
+      "url": "https://cdn.f3cms.com/webkit/0.1.1/development/webkit.js",
+      "version": "0.1.1"
+    },
+    "cache": {
+      "version": "v20231228"
+    },
+    "meta": {
+      "timezone": "Asia/Singapore",
+      "language": "zh-tw",
+      "seo": {
+        "cover": "/image/2023/08/22/ff650bad-7fdc-41b4-8307-71c643ce30f6.webp",
+        "title": "",
+        "description": ""
+      },
+      "logo": ""
+    },
+    "recaptcha": {
+      "account_id": "1",
+      "site_key": "0x4AAAAAAAJtybdWyUgHZcUI",
+      "secret_key": "0x4AAAAAAAJtyfduudvoq7-vCCjQjCVjtJo"
+    },
+    "privacy": "https://f3cms.com/privacy",
+    "terms": "https://f3cms.com/terms"
+  }
+}
