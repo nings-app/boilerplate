@@ -288,8 +288,8 @@ TABLE OF CONTENTS:-
 @font-face {
   font-family: 'Neco-Variable';
   src:
-    url('/assets/fonts/neco/Neco-Variable.ttf') format('truetype'),
-    url('/assets/fonts/neco/Neco-VariableItalic.ttf') format('truetype');
+    url('../fonts/neco/Neco-Variable.ttf') format('truetype'),
+    url('../fonts/neco/Neco-VariableItalic.ttf') format('truetype');
   font-weight: 400 900;
   font-display: swap;
   font-style: normal;

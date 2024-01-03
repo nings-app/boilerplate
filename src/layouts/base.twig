@@ -7,12 +7,12 @@
 		<meta property="t_code_{{ loop.index }}" content="{{ data.measurement_id }}" />
 		{% endfor %} {% endif %} {% if page.recaptcha %}
 		<meta property="t_key" content="{{ page.recaptcha.site_key }}" />
-		{% endif %} {% block meta %}{% include 'meta.twig' %}{% endblock %}
+		{% endif %} {% block meta %}{% include '@layouts/meta.twig' %}{% endblock %}
 	</head>
 
 	<body class="home-style1 {% block parent_css %}{% endblock %}">
-		{% block nav %}{% include 'nav.twig' %}{% endblock %} {% block content %}{% endblock %} {% block footer
-		%} {% include 'footer.twig' %}{% endblock %} {% include 'scripts.twig' %}
+		{% block nav %}{% include '@layouts/nav.twig' %}{% endblock %} {% block content %}{% endblock %} {% block footer
+		%} {% include '@layouts/footer.twig' %}{% endblock %} {% include '@layouts/scripts.twig' %}
 
 		<div x-data="toast" x-bind="event">
 			<template x-if="toasts.length > 0">

@@ -32,7 +32,37 @@ export default defineConfig(({ mode }) => ({
                     return `/${str}`;
                 },
             },
+            namespaces: { layouts: './src/layouts' },
         }),
+
+        copy({
+            // copyOnce: true,
+            flatten: false,
+            hook: 'closeBundle',
+            force: true,
+            targets: [
+                {
+                    src: 'public/assets/**/*.*',
+                    dest: 'dist/',
+                },
+                {
+                    src: 'src/**/*.twig',
+                    dest: 'dist/',
+                    force: true,
+                    transform: (html, filename) =>
+                        html
+                            .toString()
+                            .replace(/\/src(\/styles[^\s"]+)/, '{{"/assets$1"|themeUrl}}')
+                            .replace(/\/src(\/scripts[^\s"]+)/, '{{"/assets$1"|themeUrl}}')
+                            // .replace('/src/scripts', '{{domain.cdn}}/assets/scripts')
+                            .replace(/\|repx\(\"(.+)\"\)/, '|$1')
+                            // .replace('/assets/images', '{{domain.cdn}}/assets/images')
+                            .replace('scss', 'css'),
+                },
+            ],
+        }),
+
+        del({ hook: 'closeBundle', targets: 'dist/*.html', force: true }),
     ],
 
     build: {
@@ -52,7 +82,7 @@ export default defineConfig(({ mode }) => ({
 
                 assetFileNames: ({ name }) => {
                     if (/remixicon/.test(name ?? '')) {
-                        return 'assets/font/[name].[ext]';
+                        return 'assets/fonts/[name].[ext]';
                     }
 
                     if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
