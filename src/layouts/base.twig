@@ -14,21 +14,19 @@
 		{% block nav %}{% include '@layouts/nav.twig' %}{% endblock %} {% block content %}{% endblock %} {% block footer
 		%} {% include '@layouts/footer.twig' %}{% endblock %} {% include '@layouts/scripts.twig' %}
 
-		<div x-data="toast" x-bind="event">
+		<div class="toast-container position-fixed p-3 top-50 start-50 translate-middle" x-data="toast" x-bind="event">
 			<template x-if="toasts.length > 0">
-				<div class="toast-container position-fixed p-3 top-50 start-50 translate-middle">
-					<template x-for="toast in toasts">
-						<div class="toast border-0 fade show">
-							<div class="toast-header border-0">
-								<i class="las la-info-circle me-2"></i>
-								<strong class="me-auto" x-text="toast.title"></strong>
-							</div>
-							<template x-if="toast.body">
-								<div class="toast-body" x-html="toast.body"></div>
-							</template>
+				<template x-for="toast in toasts">
+					<div class="toast border-0 fade show">
+						<div class="toast-header border-0">
+							<i class="las la-info-circle me-2"></i>
+							<strong class="me-auto" x-text="toast.title"></strong>
 						</div>
-					</template>
-				</div>
+						<template x-if="toast.body">
+							<div class="toast-body" x-html="toast.body"></div>
+						</template>
+					</div>
+				</template>
 			</template>
 		</div>
 	</body>
