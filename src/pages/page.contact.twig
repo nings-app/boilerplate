@@ -33,7 +33,10 @@
                 <div class="col-lg-8">
                     <div class="contact-form-card">
                         <h4 class="fsz-24px text-capitalize mb-10">與我們聯繫</h4>
-                        <p class="fsz-13px mb-30"><span class="text-danger">*</span> 表示必填欄位</p>
+                        <p class="fsz-13px mb-30">
+                            <span class="text-danger">*</span>
+                            表示必填欄位
+                        </p>
                         <form class="form" x-data="contact" x-validate="submit" novalidate>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -100,7 +103,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="cf-turnstile" data-token="token"></div>
+                                    <div x-altcha="token"></div>
                                 </div>
                             </div>
                             <button type="submit" class="btn bg-main text-white rounded-0 mt-30">

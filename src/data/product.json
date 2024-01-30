@@ -188,8 +188,9 @@
     "url": "https://my-amazing-website.f3cms.com/product/1/test-product-1",
     "env": "development",
     "webkit": {
-      "url": "https://cdn.f3cms.com/webkit/0.1.1/development/webkit.js",
-      "version": "0.1.1"
+      "url": "https://cdn.f3cms.com/webkit/0.1.9/development/webkit.js",
+      "style": "https://cdn.f3cms.com/webkit/0.1.9/development/webkit.css",
+      "version": "0.1.9"
     },
     "cache": {
       "version": "v20231228"
