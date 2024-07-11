@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 	<head>
 		{% if var.trackingData %} {% set first = var.trackingData|first %}
-		<script async src="https://www.googletagmanager.com/gtag/js?id={{first.measurement_id}}"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id={{first.measurement_id}}" crossorigin="anonymous"></script>
 		{% for data in var.trackingData %}
 		<meta property="t_code_{{ loop.index }}" content="{{ data.measurement_id }}" />
 		{% endfor %} {% endif %} {% if page.recaptcha %}

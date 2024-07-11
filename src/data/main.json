@@ -109,9 +109,9 @@
     "url": "https://member.f3cms.com/login?d=fa5epriclqlfeyicl81c",
     "env": "development",
     "webkit": {
-      "url": "https://cdn.f3cms.com/webkit/0.1.9/development/webkit.js",
-      "style": "https://cdn.f3cms.com/webkit/0.1.9/development/webkit.css",
-      "version": "0.1.9"
+      "url": "https://cdn.f3cms.com/webkit/0.1.10/development/webkit.js",
+      "style": "https://cdn.f3cms.com/webkit/0.1.10/development/webkit.css",
+      "version": "0.1.10"
     },
     "cache": {
       "version": "v202309131701"

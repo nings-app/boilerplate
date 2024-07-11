@@ -7,11 +7,13 @@
             <div class="tc-main-post-title pt-40 pb-40">
                 <div class="row">
                     <div class="col-lg-8">
-                        {% if var.data.cat_id %}
-                        <a href="{{var.data.tag_url}}">
-                            <p class="text-uppercase mb-15">{{ var.data.cat_name }}</p>
+                        {% if post.category %}
+                        <a href="{{post.category.url}}">
+                            <p class="text-uppercase mb-15">{{post.category.name}}</p>
                         </a>
                         {% endif %}
+
+
                         <h1 class="title">{{var.data.title}}</h1>
                         <h2 class="fsz-16px mt-20 color-666">{{var.data.subtitle | default('')}}</h2>
                     </div>
@@ -41,7 +43,7 @@
                     <div class="col-lg-6 text-lg-end">
                         <div class="links-side color-000 fsz-13px">
                             <a
-                                href="https://www.addtoany.com/add_to/copy_link?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                href="https://www.addtoany.com/add_to/copy_link?linkurl={{page.url|url_encode}}&amp;linkname="
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="me-40"
@@ -56,7 +58,7 @@
             </div>
             {% if var.data.cover != null %}
             <div class="tc-main-post-img img-cover mb-50">
-                <img src="{{var.data.cover|site_url('cdn')}}" alt="" />
+                <img src="{{var.data.cover}}" alt="" />
             </div>
             {% endif %}
             <div class="tc-main-post-content color-000">
@@ -66,7 +68,7 @@
                             <p class="text-uppercase mb-20">Share</p>
                             <div class="share-icons">
                                 <a
-                                    href="https://www.addtoany.com/add_to/twitter?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                    href="https://www.addtoany.com/add_to/twitter?linkurl={{page.url|url_encode}}&amp;linkname="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="track"
@@ -77,7 +79,7 @@
                                     <i class="la la-twitter"></i>
                                 </a>
                                 <a
-                                    href="https://www.addtoany.com/add_to/facebook?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                    href="https://www.addtoany.com/add_to/facebook?linkurl={{page.url|url_encode}}&amp;linkname="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="track"
@@ -88,7 +90,7 @@
                                     <i class="la la-facebook-f"></i>
                                 </a>
                                 <a
-                                    href="https://www.addtoany.com/add_to/line?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                    href="https://www.addtoany.com/add_to/line?linkurl={{page.url|url_encode}}&amp;linkname="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="track"
@@ -99,7 +101,7 @@
                                     <i class="lab la-line"></i>
                                 </a>
                                 <a
-                                    href="https://www.addtoany.com/add_to/linkedin?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                    href="https://www.addtoany.com/add_to/linkedin?linkurl={{page.url|url_encode}}&amp;linkname="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="track"
@@ -110,7 +112,7 @@
                                     <i class="lab la-linkedin-in"></i>
                                 </a>
                                 <a
-                                    href="https://www.addtoany.com/add_to/copy_link?linkurl={{page.url|url_encode}}%2F&amp;linkname="
+                                    href="https://www.addtoany.com/add_to/copy_link?linkurl={{page.url|url_encode}}&amp;linkname="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="track"
@@ -165,7 +167,7 @@
 
                     <div class="col-lg-3 mb-5 mb-lg-0">
                         {% if loop.first %} RECOMMENDED {# <i class="la la-angle-right ms-1"></i> #} {% else %}
-                        <span class="mb-30"></span>
+                        <span class="mb-10"></span>
                         {% endif %}
                         <div class="row">
                             <div class="col-12 border-1 border-end brd-gray">
@@ -173,18 +175,13 @@
                                     <div class="item">
                                         {% if press.cover != null %}
                                         <div class="img img-cover th-250">
-                                            <img src="{{press.cover|site_url('cdn')}}" alt="" />
+                                            <img src="{{press.cover}}" alt="" />
                                         </div>
                                         {% endif %}
 
                                         <div class="content pt-20">
-                                            {% if press.cat_id %}
-                                            <a
-                                                href="{{press.cat_url}}"
-                                                class="news-cat color-999 fsz-13px text-uppercase mb-10"
-                                            >
-                                                {{ press.cat_name }}
-                                            </a>
+                                            {% if post.category %}
+                                            <a href="{{post.category.url}}" class="news-cat color-999 fsz-13px text-uppercase mb-10">{{post.category.name}}</a>
                                             {% endif %}
 
                                             <h4 class="title ltspc--1 mb-10">
