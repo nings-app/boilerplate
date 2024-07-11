@@ -12,3 +12,26 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+
+.product-page .product-info .qyt-addCart{ 
+    .action-btn{
+        display: flex;
+        column-gap: 12px;
+        width: 100%;
+        .btn{
+            width: 100%;
+            &.border:hover{
+                border-color: black !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .product-page .product-info .qyt-addCart{ 
+        flex-direction: column;
+        .add-more{
+            width: 100%;
+        }
+    }
+}
