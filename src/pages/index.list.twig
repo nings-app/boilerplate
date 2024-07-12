@@ -8,11 +8,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="info">
-                            <template x-if="data.tag.current.value !== 'all'">
-                                <h2 x-text="data.tag.current.name"></h2>
+                            <template x-if="data.cate.current.value !== 'all'">
+                                <h2 x-text="data.cate.current.name"></h2>
                             </template>
                             <div class="links">
-                                <template x-for="cate in data.tag.list">
+                                <template x-for="cate in data.cate.list">
                                     <a :href="cate.url" x-text="cate.name">{{ cate.name }}</a>
                                 </template>
                             </div>
