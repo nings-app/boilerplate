@@ -36,7 +36,7 @@
                                 {% endfor %}
                             </div>
                             <span class="me-40">
-                                <i class="la la-calendar me-1"></i> {{var.data.publish_ts|date('M d, Y')}}
+                                <i class="fa fa-calendar me-1"></i> {{var.data.publish_ts|date('M d, Y')}}
                             </span>
                         </div>
                     </div>
@@ -48,10 +48,10 @@
                                 rel="noopener noreferrer"
                                 class="me-40"
                             >
-                                <i class="la la-link me-1"></i> Copy Link
+                                <i class="fa fa-link me-1"></i> Copy Link
                             </a>
-                            {# <a href="#" class="me-40"><i class="la la-bookmark me-1"></i> Bookmark</a>
-                            <a href="#"><i class="la la-exclamation-triangle me-1"></i> Report</a> #}
+                            {# <a href="#" class="me-40"><i class="fa fa-bookmark me-1"></i> Bookmark</a>
+                            <a href="#"><i class="fa fa-exclamation-triangle me-1"></i> Report</a> #}
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                                     data-cate="share"
                                     data-label="{{var.data.id}}"
                                 >
-                                    <i class="la la-twitter"></i>
+                                    <i class="fab fa-twitter"></i>
                                 </a>
                                 <a
                                     href="https://www.addtoany.com/add_to/facebook?linkurl={{page.url|url_encode}}&amp;linkname="
@@ -87,7 +87,7 @@
                                     data-cate="share"
                                     data-label="{{var.data.id}}"
                                 >
-                                    <i class="la la-facebook-f"></i>
+                                    <i class="fab fa-facebook-f"></i>
                                 </a>
                                 <a
                                     href="https://www.addtoany.com/add_to/line?linkurl={{page.url|url_encode}}&amp;linkname="
@@ -98,7 +98,7 @@
                                     data-cate="share"
                                     data-label="{{var.data.id}}"
                                 >
-                                    <i class="lab la-line"></i>
+                                    <i class="fab fa-line"></i>
                                 </a>
                                 <a
                                     href="https://www.addtoany.com/add_to/linkedin?linkurl={{page.url|url_encode}}&amp;linkname="
@@ -109,7 +109,7 @@
                                     data-cate="share"
                                     data-label="{{var.data.id}}"
                                 >
-                                    <i class="lab la-linkedin-in"></i>
+                                    <i class="fab fa-linkedin-in"></i>
                                 </a>
                                 <a
                                     href="https://www.addtoany.com/add_to/copy_link?linkurl={{page.url|url_encode}}&amp;linkname="
@@ -120,7 +120,7 @@
                                     data-cate="share"
                                     data-label="{{var.data.id}}"
                                 >
-                                    <i class="las la-link"></i>
+                                    <i class="fas fa-link"></i>
                                 </a>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                     #}
 
                     <div class="col-lg-3 mb-5 mb-lg-0">
-                        {% if loop.first %} RECOMMENDED {# <i class="la la-angle-right ms-1"></i> #} {% else %}
+                        {% if loop.first %} RECOMMENDED {# <i class="fa fa-angle-right ms-1"></i> #} {% else %}
                         <span class="mb-10"></span>
                         {% endif %}
                         <div class="row">
@@ -199,7 +199,7 @@
                                             <div class="meta-bot lh-1 mt-20">
                                                 <ul class="d-flex">
                                                     <li class="date me-5">
-                                                        <i class="la la-calendar me-2"></i> {{press.publish_ts|date('M
+                                                        <i class="fa fa-calendar me-2"></i> {{press.publish_ts|date('M
                                                         d, Y')}}
                                                     </li>
                                                 </ul>
